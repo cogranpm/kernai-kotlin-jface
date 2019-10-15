@@ -45,19 +45,21 @@ dependencies {
     compile group: 'org.eclipse.platform', name: 'org.eclipse.core.commands', version: '3.9.500'
     compile group: 'org.eclipse.platform', name: 'org.eclipse.ui.workbench', version: '3.116.0'
 
-        //databinding
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.databinding', version: '1.9.100'
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.property', version: '1.7.100'
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.observable', version: '1.8.0'
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding', version: '1.7.500'
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.beans', version: '1.5.100'
+    //databinding
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.databinding', version: '1.9.100'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.property', version: '1.7.100'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.observable', version: '1.8.0'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding', version: '1.7.500'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.beans', version: '1.5.100'
 
-        //examples
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.ui.examples.javaeditor', version: '3.2.400'
-        compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.examples.databinding', version: '1.1.100'
+    //examples
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.ui.examples.javaeditor', version: '3.2.400'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.examples.databinding', version: '1.1.100'
 
-
-    }
+    //equinox
+    //registry
+    //common
+}
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
