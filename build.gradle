@@ -1,0 +1,69 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.41'
+}
+
+group 'com.parinherm'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+String osName = System.getProperty("os.name").toLowerCase();
+println(osName)
+
+ext {
+    swtName = "org.eclipse.swt.gtk.linux.x86_64"
+    if (osName.contains("windows")) {
+        swtName = "org.eclipse.swt.win32.win32.x86_64"
+    } else if (osName.contains("mac")) {
+        swtName = "org.eclipse.swt.cocoa.macosx.x86_64"
+    }
+}
+
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    //compile "org.eclipse.swt:org.eclipse.swt.cocoa.macosx.x86_64:4.3"
+
+    //swt
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.swt', version: '3.112.0'
+    compile group: 'org.eclipse.platform', name: "${swtName}", version: '3.112.0'
+    //compile group: 'org.eclipse.platform', name: 'org.eclipse.swt.cocoa.macosx.x86_64', version: '3.112.0'
+    //compile group: 'org.eclipse.platform', name: 'org.eclipse.swt.win32.win32.x86_64', version: '3.112.0'
+    //compile group: 'org.eclipse.platform', name: 'org.eclipse.swt.gtk.linux.x86_64', version: '3.112.0'
+
+    //jface
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.jface', version: '3.17.0'
+
+    //text
+    compile group: 'com.ibm.icu', name: 'icu4j', version: '65.1'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.text', version: '3.9.0'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.text', version: '3.15.300'
+
+    //eclipse
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.core.commands', version: '3.9.500'
+    compile group: 'org.eclipse.platform', name: 'org.eclipse.ui.workbench', version: '3.116.0'
+
+        //databinding
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.databinding', version: '1.9.100'
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.property', version: '1.7.100'
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.observable', version: '1.8.0'
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding', version: '1.7.500'
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.core.databinding.beans', version: '1.5.100'
+
+        //examples
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.ui.examples.javaeditor', version: '3.2.400'
+        compile group: 'org.eclipse.platform', name: 'org.eclipse.jface.examples.databinding', version: '1.1.100'
+
+
+    }
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+
